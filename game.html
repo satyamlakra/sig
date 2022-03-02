@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>simon game</title>
+<style>
+table{
+  padding: 10px 500px;
+  spacing: 220px;
+}
+td tr{
+spacing: 20px;
+}
+button{
+  width:  200px;
+  height: 200px;
+}
+body{
+  background-image: url("image_5564-Mars-Water.jpg");
+  background-repeat: no-repeat;
+  background-size:1350px;
+}
+.yo{
+  background: white;
+}
+ </style>
+<head>
+  <h3> start  the game</h3>
+</head>
+<body>
+<p id ="ds"> hi</p>
+
+<table>
+<tr>
+<td><button>B1</button></td>
+<td><button>B2</button></td>
+  </tr>
+  <tr>
+  <td><button>B3</button></td>
+  <td><button>B4</button></td>
+    </tr>
+  </table>
+  <button id ="sa">start</button>
+  </body>
+<script>
+  let arr =["red","cyan","yellow","green"];
+  let ev = document.querySelectorAll("button");
+  for (let i = 0 ; i< ev.length-1;i++)
+  { ev[i].style.background= arr[i];
+    ev[i].addEventListener('click',erd);
+  }
+
+  function erd() {
+  let  a = this.innerHTML;
+  document.getElementById("ds").innerHTML=a;
+  var r = new Audio("mixkit-censorship-beep-1082.mp3");
+
+  r.play();
+}
+let ev2 = document.querySelector('#sa');
+ev2.addEventListener("click",ed);
+
+ let h=0;
+function ed(){
+let s = setInterval(jk,2000);
+
+
+function jk(){
+h=h+1;
+
+
+let m = Math.floor(Math.random()*4);
+
+ev[m].click();
+
+console.log(m);
+if (h>3){
+  clearInterval(s);
+  location.reload();
+}
+
+}
+}
+
+  </script>
+
+</html>
